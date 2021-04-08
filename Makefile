@@ -45,7 +45,7 @@ fclean:
 
 exe:	$(NAME)
 		gcc $(CFLAGS) -L. -lasm main.c -o prog
-		./prog < Makefile
+		./prog
 
 re : fclean all
 
