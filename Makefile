@@ -18,19 +18,19 @@ NAME = libasm.a
 
 HEADER = ./Includes
 
-CC = gcc
+CC = nasm -f macho64
 
-SRCS =
+SRCS = test.s
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.s=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fno-pie
 
 all:	$(NAME)
 
-%.o: %.c $(HEADER)
+%.o: %.s $(HEADER)
 			@printf "\033[2K\r$(PURPLE)$<: $(CYAN)loading..$(RESET)"
-			@gcc $(CFLAGS) -c $< -o $@
+			@$(CC) $< -o $@
 
 $(NAME): $(OBJS) $(HEADER)
 		@ar rcs $(NAME) $(OBJS)
@@ -43,13 +43,17 @@ fclean:
 		@$(RM) $(OBJS)
 		@$(RM) $(NAME)
 
+exe:	$(NAME)
+		gcc $(CFLAGS) -L. -lasm main.c -o prog
+		./prog < Makefile
+
 re : fclean all
 
 help :
 		@printf "\n$(GREY)Welcome to my Makefile.$(RESET)\n\n"
-		@printf "$(YELLOW)all              $(RESET)$(WHITE) - run compilation of libftprintf.a  \n\n"
+		@printf "$(YELLOW)all              $(RESET)$(WHITE) - run compilation of libasm.a  \n\n"
 		@printf "$(YELLOW)clean            $(RESET)$(WHITE) - delete all .o (OBJS) \n\n"
-		@printf "$(YELLOW)fclean           $(RESET)$(WHITE) - delete all .o (OBJS) and libftprintf.a \n\n"
+		@printf "$(YELLOW)fclean           $(RESET)$(WHITE) - delete all .o (OBJS) and libasm.a \n\n"
 		@printf "$(YELLOW)re               $(RESET)$(WHITE) - do fclean and all\n\n"
 
 .PHONY: all clean fclean re help

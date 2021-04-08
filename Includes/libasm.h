@@ -3,4 +3,6 @@
 
 # include <errno.h>
 
+void	test();
+
 #endif
