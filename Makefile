@@ -20,11 +20,11 @@ HEADER = ./Includes
 
 CC = nasm -f macho64
 
-SRCS = test.s
+SRCS = ft_strlen.s
 
 OBJS = $(SRCS:.s=.o)
 
-CFLAGS = -Wall -Wextra -Werror -fno-pie
+CFLAGS = -Wall -Wextra  -fno-pie
 
 all:	$(NAME)
 

@@ -2,6 +2,7 @@
 
 int	main(void)
 {
-	test();
+	printf("my_strlen : %d.\n", ft_strlen("coucou"));
+	printf("re_strlen : %d.\n", strlen("coucou"));
 	return (0);
 }

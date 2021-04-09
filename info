@@ -1,0 +1,41 @@
+pour le langage asm :
+
+nasm -f macho64 test.s		//cree le fichier .o
+ld -lSystem test.o			//cree un exe a.out executable
+objdump -d test.o			//permet de voir le fichier en bits
+alias ls="curl wttr.in/lyon && ls"
+https://www.youtube.com/watch?v=uDkW8bQt1Rc&list=PLEKeA49RafrIdel83b4mUPDnVxs4Fxq86&index=2
+
+les registre en asm :
+
+rax => 64 bits | eax => 32 bits | ax => 16 bits
+rdi => 64 bits | edi => 32 bits | bx => 16 bits
+rsi => 64 bits | ecx => 32 bits | cx => 16 bits
+rdx => 64 bits | ebx => 32 bits | dx => 16 bits
+
+mov <destination>, <source>
+mov rax, 45 | rax = 45
+syscall => appel kernel
+
+db => define bytes        => 1 octet | unsigned char
+dw => define word         => 2 octet | unsigned short
+dd => define double word => 4 octet | unsigned int
+dq => define quad word   => 8 octet | unsigned long
+
+instruction :
+cmp c1, c2   | compare
+je			 | jump if equal
+
+label :
+
+_start:
+
+label:
+	jmp		label pour aller vers la section cible
+
+
+ Les six premiers arguments entiers ou pointeurs sont passés dans les registres :
+ RDI, RSI, RDX, RCX, R8, R9
+
+ tandis que pour les premiers arguments en virgule flottante: 
+ XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6 et XMM7

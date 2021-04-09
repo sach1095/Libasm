@@ -3,6 +3,6 @@
 
 # include <errno.h>
 
-void	test();
+int	ft_strlen(char *str);
 
 #endif

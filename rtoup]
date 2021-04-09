@@ -1,0 +1,18 @@
+{
+    "editor.insertSpaces": false,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "editor.renderWhitespace": "all",
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.editor.enablePreview": false,
+    "notebook.displayOrder": [],
+    "editor.codeActionsOnSave": null,
+    "editor.rulers": [
+        80
+    ],
+    "window.zoomLevel": 1,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "window.restoreFullscreen": true,
+}
