@@ -4,7 +4,6 @@ nasm -f macho64 test.s		//cree le fichier .o
 ld -lSystem test.o			//cree un exe a.out executable
 objdump -d test.o			//permet de voir le fichier en bits
 alias ls="curl wttr.in/lyon && ls"
-https://www.youtube.com/watch?v=uDkW8bQt1Rc&list=PLEKeA49RafrIdel83b4mUPDnVxs4Fxq86&index=2
 
 les registre en asm :
 
@@ -17,8 +16,8 @@ mov <destination>, <source>
 mov rax, 45 | rax = 45
 syscall => appel kernel
 
-db => define bytes        => 1 octet | unsigned char
-dw => define word         => 2 octet | unsigned short
+db => define bytes       => 1 octet | unsigned char
+dw => define word        => 2 octet | unsigned short
 dd => define double word => 4 octet | unsigned int
 dq => define quad word   => 8 octet | unsigned long
 
@@ -34,8 +33,11 @@ label:
 	jmp		label pour aller vers la section cible
 
 
- Les six premiers arguments entiers ou pointeurs sont passés dans les registres :
- RDI, RSI, RDX, RCX, R8, R9
+Les six premiers arguments entiers ou pointeurs sont passés dans les registres :
+RDI, RSI, RDX, RCX, R8, R9
 
- tandis que pour les premiers arguments en virgule flottante: 
- XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6 et XMM7
+tandis que pour les premiers arguments en virgule flottante:
+XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6 et XMM7
+
+condition pour if :
+jle (<=), je (==), jge (>=), jg (>), jne (!=), and many others
