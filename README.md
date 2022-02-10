@@ -1,8 +1,8 @@
-Ce Project a pour but de nous faire decouvrir le langage ASM.
+Ce projet a pour but de nous faire découvrir le langage ASM.
 
-Ici nous avon recode les fonction de base de la bibliothèque standard c.
+Ici nous avons recodé les fonctions de base de la bibliothèque standard C.
 
-Il nous etait demander de recode :
+Il nous etait demandé de recode :
 
 - strlen
 - write
